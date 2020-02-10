@@ -1,0 +1,24 @@
+{
+    "name": "GuessTheColor",
+    "short_name": "Guess-The-Color",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#4287f5",
+    "theme_color": "pink",
+    "description": "A game to guess the color.",
+    "icons": [{
+      "src": "resources/assets/icon.png",
+      "sizes": "20x20",
+      "type": "image/png"
+    },
+    {
+      "src": "resources/assets/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "resources/assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }]
+  }

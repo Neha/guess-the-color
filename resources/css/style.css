@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #fff;
+}
+
+.contentWrapper{
+  background: #4287f5;
+}
+
+.contentWrapper > div{
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+  
+}
+
+.contentWrapper h2{
+  margin: 30px 0;
+}
+
+.contentWrapper a {
+  color: #fff;
+  font-size: 1.5rem;
+  
+}
+.contentWrapper p{
+  margin: 10px 0;
+}
+
+.gameWrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  border: 6px solid currentcolor;
+  padding: 10px;
+  box-shadow: 6px 6px 0px #000;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+.wrapper{
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+form{
+  margin-top: 30px;
+}
+
+form > div {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  color: #000;
+  height: 30px;
+  width: 80%;
+  font-size: 2rem;
+  padding-left: 30px;
+}
+
+button {
+  width: 70%;
+  height: 50px;
+  border-radius: 3px;
+  border: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background: #000;
+  color: #fff;
+  margin:20px 0;
+}
+
+.unit {
+  position: relative;
+  color: #999;
+  font-size: 2rem;
+  left: 26px;
+}
+
+.message {
+  margin-top: 20px;
+}
+
+span.correct-icon{
+  display: inline-block;
+}
+
+
+span.wrong-icon{
+  display: inline-block;
+}
+
+.correctAnswer {
+  background: #eaeaea;
+  color: #000;
+  padding: 10px;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+a{
+    color:#fff;
+    font-size:1.3rem;
+}
+
+.correct-icon{
+  background: url('../assets/correct.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.wrong-icon{
+  background: url('../assets/wrong.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+}
+

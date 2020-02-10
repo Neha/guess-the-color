@@ -1,0 +1,31 @@
+<!DOCTYPE html lang="en">
+<head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#4287f5"/>
+        <title>Color Quiz :: A quiz for your offline time</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+        <link rel="manifest" href="manifest.json" />
+    </head>
+    
+</head>
+<body class="contentWrapper">
+    <div>
+    <h2>Welcome to the awesome world of colors!!</h2>
+    <p>Want to play a game when you are offline? This game only works when you are off-grid. Turn on your
+      'airplane mode' and start playing or you can click at below link to play now.
+    </p>
+    <a href="game.html" title="click here to play the game">Play the game</a>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('serviceworker.js')
+        .then((reg) => {
+          console.log('Service worker registered.', reg);
+        });
+  });
+}
+</script>
+</body>
+</html>
