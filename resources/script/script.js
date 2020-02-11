@@ -3,7 +3,7 @@ const guessTheColor = (function($) {
   const wrapperDiv = $.querySelector(".wrapper");
   const icon = $.getElementById("icon");
   const correctAnswerElement = $.getElementById("correctAnswer");
-  const nextLinkElement = $.getElementById("nextLink")
+  const nextLinkElement = $.getElementById("nextLink");
   const userInputField = $.getElementById("userInput");
 
   let color = "#";
@@ -12,20 +12,11 @@ const guessTheColor = (function($) {
   let correctAnswer = "";
 
   const createRandomColor = function() {
-    if (color.length > 6) {
-      color = "#";
-      let letters = "0123456789ABCDEF";
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    } else {
-      let letters = "0123456789ABCDEF";
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
+    let letters = "0123456789ABCDEF";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
     }
+    return color;
   };
   const setColorToBody = function() {
     mainWrapper.style.backgroundColor = createRandomColor();
@@ -35,44 +26,38 @@ const guessTheColor = (function($) {
 
     // Remove hte next color link
     if (nextLinkElement) {
-       nextLinkElement.remove();
-    }
-    else if (correctAnswerElement) {
+      nextLinkElement.remove();
+    } else if (correctAnswerElement) {
       dcorrectAnswerElement.remove();
     }
-    
+
     // Check the color and user input is matching or not?
     if (`#${userInputColor.toLowerCase()}` === color.toLowerCase()) {
       matched = true;
-
-      // Add correct icon and should remove after few minutes
-      if (icon.hasAttribute("class")) {
-        icon.removeAttribute("class");
-        icon.setAttribute("class", "correct-icon");
-      } else {
-        icon.setAttribute("class", "correct-icon");
-      }
+      showIcon("correct-icon");
       setTimeout(() => {
-          icon.removeAttribute("class");
-          setColorToBody();
-      
+        icon.removeAttribute("class");
+        setColorToBody();
         // Clear input only when it is correct value and check for the correct message DIV
         userInputField.value = "";
       }, 2000);
     } else {
       matched = false;
-      // Add correct icon and should remove after few minutes
-      if (icon.hasAttribute("class")) {
-        icon.removeAttribute("class");
-        icon.setAttribute("class", "wrong-icon");
-      } else {
-        icon.setAttribute("class", "wrong-icon");
-      }
-
+      showIcon("wrong-icon");
       setTimeout(() => {
         ShowCorrectAnswer();
         appendNextLink();
+        removeAppendLink();
       }, 2000);
+    }
+  };
+
+  const showIcon = function(state) {
+    if (icon.hasAttribute("class")) {
+      icon.removeAttribute("class");
+      icon.setAttribute("class", state);
+    } else {
+      icon.setAttribute("class", state);
     }
   };
 
@@ -100,13 +85,14 @@ const guessTheColor = (function($) {
     }
   };
 
-  const appendNextLink = function() {
+  const removeAppendLink = function() {
     if (nextLinkElement) {
       nextLinkElement.remove();
-      wrapperDiv.innerHTML += NextLinkTemplate;
-    } else {
-      wrapperDiv.innerHTML += NextLinkTemplate;
     }
+  };
+
+  const appendNextLink = function() {
+    wrapperDiv.innerHTML += NextLinkTemplate;
   };
 
   const events = function(element) {

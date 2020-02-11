@@ -1,5 +1,5 @@
 
-const version = 2.5;
+const version = 2.6;
 let CACHENAME = `guessthecolor-${version}` ;
 
 var filesToCache = [
