@@ -24,11 +24,11 @@ const guessTheColor = (function($) {
   const compareTheColors = function() {
     let userInputColor = userInputField.value;
 
-    // Remove hte next color link
+    // Remove the next color link
     if (nextLinkElement) {
       nextLinkElement.remove();
     } else if (correctAnswerElement) {
-      dcorrectAnswerElement.remove();
+      correctAnswerElement.remove();
     }
 
     // Check the color and user input is matching or not?
@@ -38,6 +38,7 @@ const guessTheColor = (function($) {
       setTimeout(() => {
         icon.removeAttribute("class");
         setColorToBody();
+
         // Clear input only when it is correct value and check for the correct message DIV
         userInputField.value = "";
       }, 2000);
@@ -52,6 +53,7 @@ const guessTheColor = (function($) {
     }
   };
 
+  // Append the ICON with Button
   const showIcon = function(state) {
     if (icon.hasAttribute("class")) {
       icon.removeAttribute("class");
